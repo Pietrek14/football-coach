@@ -1,6 +1,6 @@
 # FootballCoach
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.4.
+Football Coach is an app for the coach of the national Polish football team. It enables the user to create new players and build a squad with them. The squad has to be in a 4-3-3 or 4-4-2 formation. Every player has to have a designated position, e.g. forward, midfielder, goalkeeper. It uses Firebase for backend.
 
 ## Development server
 
