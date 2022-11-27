@@ -4,7 +4,9 @@ import { LoginFormComponent } from './login-form/login-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'login', component: LoginFormComponent }
+  { path: 'login', component: LoginFormComponent, data: {
+    title: 'Login'
+  } }
 ];
 
 @NgModule({
