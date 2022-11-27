@@ -8,6 +8,7 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { SquadBuilderComponent } from './squad-builder/squad-builder.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PageSelectComponent } from './page-select/page-select.component';
+import { SquadsPageComponent } from './squads-page/squads-page.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PageSelectComponent } from './page-select/page-select.component';
     LoginFormComponent,
     SquadBuilderComponent,
     HomePageComponent,
-    PageSelectComponent
+    PageSelectComponent,
+    SquadsPageComponent
   ],
   imports: [
     BrowserModule,
