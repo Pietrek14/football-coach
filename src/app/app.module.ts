@@ -9,6 +9,7 @@ import { SquadBuilderComponent } from './squad-builder/squad-builder.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PageSelectComponent } from './page-select/page-select.component';
 import { SquadsPageComponent } from './squads-page/squads-page.component';
+import { SquadOverviewComponent } from './squad-overview/squad-overview.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SquadsPageComponent } from './squads-page/squads-page.component';
     SquadBuilderComponent,
     HomePageComponent,
     PageSelectComponent,
-    SquadsPageComponent
+    SquadsPageComponent,
+    SquadOverviewComponent
   ],
   imports: [
     BrowserModule,
