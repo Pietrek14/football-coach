@@ -12,4 +12,8 @@ export class PlayersPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+	addPlayer() {
+		alert('add player');
+	}
+
 }

@@ -12,6 +12,7 @@ import { SquadsPageComponent } from './squads-page/squads-page.component';
 import { SquadOverviewComponent } from './squad-overview/squad-overview.component';
 import { PlayersPageComponent } from './players-page/players-page.component';
 import { PlayerCardComponent } from './player-card/player-card.component';
+import { AddButtonComponent } from './add-button/add-button.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PlayerCardComponent } from './player-card/player-card.component';
     SquadsPageComponent,
     SquadOverviewComponent,
     PlayersPageComponent,
-    PlayerCardComponent
+    PlayerCardComponent,
+    AddButtonComponent
   ],
   imports: [
     BrowserModule,
