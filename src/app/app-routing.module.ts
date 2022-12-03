@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginFormComponent } from './login-form/login-form.component';
+import { PlayersPageComponent } from './players-page/players-page.component';
 import { SquadsPageComponent } from './squads-page/squads-page.component';
 
 const routes: Routes = [
@@ -9,6 +10,9 @@ const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'squads', component: SquadsPageComponent, data: {
     title: 'Your squads'
+  } },
+  { path: 'players', component: PlayersPageComponent, data: {
+    title: 'Players'
   } },
   { path: 'login', component: LoginFormComponent, data: {
     title: 'Login'

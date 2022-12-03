@@ -10,6 +10,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { PageSelectComponent } from './page-select/page-select.component';
 import { SquadsPageComponent } from './squads-page/squads-page.component';
 import { SquadOverviewComponent } from './squad-overview/squad-overview.component';
+import { PlayersPageComponent } from './players-page/players-page.component';
+import { PlayerCardComponent } from './player-card/player-card.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { SquadOverviewComponent } from './squad-overview/squad-overview.componen
     HomePageComponent,
     PageSelectComponent,
     SquadsPageComponent,
-    SquadOverviewComponent
+    SquadOverviewComponent,
+    PlayersPageComponent,
+    PlayerCardComponent
   ],
   imports: [
     BrowserModule,
