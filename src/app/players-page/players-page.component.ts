@@ -9,7 +9,7 @@ import { Position } from '../position';
 })
 export class PlayersPageComponent implements OnInit {
 
-	formActive = true;
+	formActive = false;
 	newPlayerName = "";
 	newPlayerNumber = 0;
 	newPlayerPosition: Position = 'Forward';
