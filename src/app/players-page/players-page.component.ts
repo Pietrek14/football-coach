@@ -1,5 +1,6 @@
 import { ApplicationRef, ChangeDetectionStrategy } from '@angular/core';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Position } from '../position';
 
 @Component({
   selector: 'app-players-page',
@@ -8,9 +9,10 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 })
 export class PlayersPageComponent implements OnInit {
 
-	formActive = false;
+	formActive = true;
 	newPlayerName = "";
 	newPlayerNumber = 0;
+	newPlayerPosition: Position = 'Forward';
 
 	constructor() {}
 

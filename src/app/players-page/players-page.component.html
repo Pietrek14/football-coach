@@ -15,6 +15,13 @@
 			<input type="text" class="px-1" id="name" name="name" [(ngModel)]="newPlayerName">
 			<label for="number">Number</label>
 			<input type="text" class="px-1" id="number" name="number" [(ngModel)]="newPlayerNumber">
+			<label for="position">Position</label>
+			<select name="position" id="position" [(ngModel)]="newPlayerPosition">
+				<option value="Goalkeeper">Goalkeeper</option>
+				<option value="Defender">Defender</option>
+				<option value="Midfielder">Midfielder</option>
+				<option value="Forward">Forward</option>
+			</select>
 		</div>
 		<button class="bg-slate-800 text-white p-2" (click)="addPlayer()">Add a new player</button>
 		<button class="absolute top-0 right-1" (click)="closeForm()">X</button>
