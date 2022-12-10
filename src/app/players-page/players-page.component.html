@@ -4,5 +4,19 @@
 	<app-player-card img="assets/lewandowski.png" name="Robert Lewandowski" position="Forward"></app-player-card>
 	<app-player-card img="assets/lewandowski.png" name="Robert Lewandowski" position="Forward"></app-player-card>
 	<app-player-card img="assets/lewandowski.png" name="Robert Lewandowski" position="Forward"></app-player-card>
-	<app-add-button [onclick]="addPlayer"></app-add-button>
+	<div class="flex justify-center items-center w-12 h-12 fixed bottom-8 right-8 bg-blue-600 text-4xl text-white font-bold cursor-pointer" (click)="openForm()">
+		+
+	</div>
+	<form class="flex flex-col gap-3 items-center justify-center px-3 py-10 border-2 border-black bg-slate-400 fixed transition-all"
+		[class.add-player-form]="!formActive" [class.add-player-form-active]="formActive">
+		<h2 class="text-xl">Add a new player</h2>
+		<div class="grid grid-cols-2 gap-y-2">
+			<label for="name">Name</label>
+			<input type="text" class="px-1" id="name" name="name" [(ngModel)]="newPlayerName">
+			<label for="number">Number</label>
+			<input type="text" class="px-1" id="number" name="number" [(ngModel)]="newPlayerNumber">
+		</div>
+		<button class="bg-slate-800 text-white p-2" (click)="addPlayer()">Add a new player</button>
+		<button class="absolute top-0 right-1" (click)="closeForm()">X</button>
+	</form>
 </div>

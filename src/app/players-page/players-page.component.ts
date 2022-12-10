@@ -1,19 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { ApplicationRef, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-players-page',
   templateUrl: './players-page.component.html',
-  styleUrls: ['./players-page.component.css']
+  styleUrls: ['./players-page.component.css'],
 })
 export class PlayersPageComponent implements OnInit {
 
-  constructor() { }
+	formActive = false;
+	newPlayerName = "";
+	newPlayerNumber = 0;
+
+	constructor() {}
 
   ngOnInit(): void {
   }
 
+	openForm() {
+		this.formActive = true;
+	}
+
+	closeForm() {
+		this.formActive = false;
+	}
+
 	addPlayer() {
-		alert('add player');
+		this.closeForm();
 	}
 
 }
