@@ -8,8 +8,8 @@ import { Position } from '../position';
 })
 export class PlayerCardComponent implements OnInit {
 
-	@Input() img = '';
 	@Input() name = '';
+	@Input() number = '';
 	@Input() position: Position = 'Goalkeeper';
 
   constructor() { }
