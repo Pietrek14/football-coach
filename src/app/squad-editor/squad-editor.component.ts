@@ -36,6 +36,7 @@ export class SquadEditorComponent implements OnInit {
 				this.id = id;
 				this.http.get<Squad>(this.squadUrl).subscribe((data: Squad) => {
 					this.squad = data;
+					console.log(this.squad);
 				});
 			} else {
 				console.error('No squad id provided');
