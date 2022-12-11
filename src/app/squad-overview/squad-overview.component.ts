@@ -20,7 +20,7 @@ export class SquadOverviewComponent implements OnInit {
 	}
 
 	squadLink() {
-		return '/squad/' + this.id;
+		return `/squad/${this.id}`;
 	}
 
 }

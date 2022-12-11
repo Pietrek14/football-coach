@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Squad } from '../squad';
 
 @Component({
   selector: 'app-squads-page',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SquadsPageComponent implements OnInit {
 
-  constructor() { }
+	squadList: Squad[] = [];
+	squadsUrl = "https://football-coach-ad0f1-default-rtdb.europe-west1.firebasedatabase.app/squad.json";
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+		this.fetchSquads();
   }
+
+	fetchSquads() {
+		this.http.get<Squad[]>(this.squadsUrl).subscribe((data) => {
+			this.squadList = data;
+		});
+	}
 
 }
