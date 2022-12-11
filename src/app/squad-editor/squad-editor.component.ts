@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SquadEditorComponent implements OnInit {
 
+	formActive = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
+
+	openForm() {
+		this.formActive = true;
+	}
+
+	closeForm() {
+		console.log('a');
+		this.formActive = false;
+	}
 
 }

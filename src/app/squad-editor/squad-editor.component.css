@@ -9,3 +9,14 @@ input[type=radio]+.formation-select {
 input[type=radio]:checked+.formation-select {
   @apply bg-blue-500 text-white;
 }
+
+.add-player-to-squad-form.active {
+	top: 0;
+	opacity: 0;
+}
+
+.add-player-to-squad-form {
+	top: 50vh;
+	left: 50vw;
+	transform: translate(-50%, -50%);
+}
