@@ -8,7 +8,9 @@ import { SquadsPageComponent } from './squads-page/squads-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomePageComponent },
+  { path: 'home', component: HomePageComponent, data: {
+    title: 'Football Coach'
+  } },
   { path: 'squads', component: SquadsPageComponent, data: {
     title: 'Your squads'
   } },
