@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type=radio]+.formation-select {
+	@apply bg-slate-500 text-black;
+}
+
+input[type=radio]:checked+.formation-select {
+  @apply bg-blue-500 text-white;
+}

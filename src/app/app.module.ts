@@ -13,6 +13,7 @@ import { SquadOverviewComponent } from './squad-overview/squad-overview.componen
 import { PlayersPageComponent } from './players-page/players-page.component';
 import { PlayerCardComponent } from './player-card/player-card.component';
 import { AddButtonComponent } from './add-button/add-button.component';
+import { SquadEditorComponent } from './squad-editor/squad-editor.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AddButtonComponent } from './add-button/add-button.component';
     SquadOverviewComponent,
     PlayersPageComponent,
     PlayerCardComponent,
-    AddButtonComponent
+    AddButtonComponent,
+    SquadEditorComponent
   ],
   imports: [
     BrowserModule,

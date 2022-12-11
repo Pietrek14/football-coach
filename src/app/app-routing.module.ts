@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page/home-page.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { PlayersPageComponent } from './players-page/players-page.component';
+import { SquadEditorComponent } from './squad-editor/squad-editor.component';
 import { SquadsPageComponent } from './squads-page/squads-page.component';
 
 const routes: Routes = [
@@ -10,6 +11,9 @@ const routes: Routes = [
   { path: 'home', component: HomePageComponent },
   { path: 'squads', component: SquadsPageComponent, data: {
     title: 'Your squads'
+  } },
+  { path: 'squad/:squadId', component: SquadEditorComponent, data: {
+    title: 'Edit squad'
   } },
   { path: 'players', component: PlayersPageComponent, data: {
     title: 'Players'
