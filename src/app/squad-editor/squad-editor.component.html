@@ -25,7 +25,7 @@
 						(click)="setForm('main')">+</div>
 				</div>
 				<div class="flex flex-col gap-1">
-					<ng-template ngFor let-player let-i="index" [ngForOf]="squad.main">
+					<ng-template ngFor let-player let-i="index" [ngForOf]="sorted(squad.main)">
 						<div class="flex items-center gap-5">
 							<div class="flex justify-between w-full">
 								<span>
@@ -48,7 +48,7 @@
 					<div class="flex justify-center items-center bg-blue-500 text-2xl text-white w-10 h-10 cursor-pointer"
 						(click)="setForm('reserve')">+</div>
 				</div>
-				<ng-template ngFor let-player let-i="index" [ngForOf]="squad.reserve">
+				<ng-template ngFor let-player let-i="index" [ngForOf]="sorted(squad.reserve)">
 					<div class="flex items-center gap-5">
 						<div class="flex justify-between w-full">
 							<span>
@@ -77,7 +77,7 @@
 				{{player.name}}
 			</span>
 			<b>{{player.position}}</b>
-			<div class="flex justify-center items-center w-6 h-6 bg-blue-500 text-white cursor-pointer">
+			<div class="flex justify-center items-center w-6 h-6 bg-blue-500 text-white cursor-pointer" (click)="addToSquad(i, formMode)">
 				+
 			</div>
 		</div>

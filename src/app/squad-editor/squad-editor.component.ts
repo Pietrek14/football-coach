@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Formation } from '../formation';
+import { Formation, getFormationLimitForPosition, getFormationLimits } from '../formation';
 import { Player } from '../player';
+import { positionPriority } from '../position';
 import { Squad } from '../squad';
 
 type FormMode = "closed" | "main" | "reserve";
@@ -37,6 +38,8 @@ export class SquadEditorComponent implements OnInit {
 				this.id = id;
 				this.http.get<Squad>(this.squadUrl).subscribe((data: Squad) => {
 					this.squad = data;
+					if(!this.squad.main) this.squad.main = [];
+					if(!this.squad.reserve) this.squad.reserve = [];
 					console.log(this.squad);
 				});
 			} else {
@@ -68,6 +71,36 @@ export class SquadEditorComponent implements OnInit {
 
 	updateSquad() {
 		this.http.put(this.squadUrl, this.squad).subscribe((data) => {});
+	}
+
+	addToSquad(index: number, mode: FormMode) {
+		const player = this.playersLeft()[index];
+
+		if (mode === "main") {
+			if(this.squad.main.length >= 11) {
+				alert("Maximum main squad size reached");
+				return;
+			}
+
+			const limit = getFormationLimitForPosition(this.squad.formation, player.position);
+			const currentCount = this.squad.main.filter(p => p.position === player.position).length;
+
+			if(currentCount >= limit) {
+				alert("Maximum number of players in this position reached");
+				return;
+			}
+
+			this.squad.main.push(player);
+		} else {
+			this.squad.reserve.push(player);
+		}
+		this.updateSquad();
+	}
+
+	sorted(players: Player[]) {
+		return players.sort((a, b) => {
+			return positionPriority(a.position) - positionPriority(b.position);
+		});
 	}
 
 }
