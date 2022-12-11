@@ -1,8 +1,7 @@
 <div class="grid grid-cols-4 justify-items-center gap-y-5 px-32 py-12">
-	<app-player-card number="9" name="Robert Lewandowski" position="Forward"></app-player-card>
-	<app-player-card number="9" name="Robert Lewandowski" position="Forward"></app-player-card>
-	<app-player-card number="9" name="Robert Lewandowski" position="Forward"></app-player-card>
-	<app-player-card number="9" name="Robert Lewandowski" position="Forward"></app-player-card>
+	<ng-template ngFor let-player [ngForOf]="playerList">
+		<app-player-card [number]="player.number" [name]="player.name" [position]="player.position"></app-player-card>
+	</ng-template>
 	<div class="flex justify-center items-center w-12 h-12 fixed bottom-8 right-8 bg-blue-600 text-4xl text-white font-bold cursor-pointer" (click)="openForm()">
 		+
 	</div>

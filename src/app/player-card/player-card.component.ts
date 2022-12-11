@@ -9,7 +9,7 @@ import { Position } from '../position';
 export class PlayerCardComponent implements OnInit {
 
 	@Input() name = '';
-	@Input() number = '';
+	@Input() number = 0;
 	@Input() position: Position = 'Goalkeeper';
 
   constructor() { }
