@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Formation } from '../formation';
 import { Player } from '../player';
 import { Squad } from '../squad';
 
@@ -59,8 +60,13 @@ export class SquadEditorComponent implements OnInit {
 		return this.playerList.filter(player => !this.playerInSquad(player.number));
 	}
 
-	updateSquadName(name: string) {
-		this.squad.name = name;
+	updateFormation() {
+		this.squad.main = [];
+		this.squad.reserve = [];
+		this.updateSquad();
+	}
+
+	updateSquad() {
 		this.http.put(this.squadUrl, this.squad).subscribe((data) => {});
 	}
 

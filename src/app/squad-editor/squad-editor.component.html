@@ -1,14 +1,17 @@
 <form class="flex flex-col gap-1 px-24 py-12">
-	<input type="text" class="text-4xl font-semibold bg-transparent" name="squad-name" (change)="updateSquadName(squad.name)" [(ngModel)]="squad.name">
+	<input type="text" class="text-4xl font-semibold bg-transparent" name="squad-name"
+		(change)="updateSquad" [(ngModel)]="squad.name">
 	<div class="flex flex-col gap-10 px-24">
 		<div class="flex justify-between items-center">
 			<h4 class="text-2xl font-semibold">Formation:</h4>
 			<div class="flex gap-12">
-				<input type="radio" name="formation" id="formation-4-4-2" class="invisible" value="4-4-2" [(ngModel)]="squad.formation">
+				<input type="radio" name="formation" id="formation-4-4-2" class="invisible" value="4-4-2"
+					(change)="updateFormation()" [(ngModel)]="squad.formation">
 				<label class="formation-select px-4 py-2 text-lg font-semibold cursor-pointer" for="formation-4-4-2">
 					4-4-2
 				</label>
-				<input type="radio" name="formation" id="formation-4-3-3" class="invisible" value="4-3-3" [(ngModel)]="squad.formation">
+				<input type="radio" name="formation" id="formation-4-3-3" class="invisible" value="4-3-3"
+					(change)="updateFormation()" [(ngModel)]="squad.formation">
 				<label class="formation-select px-4 py-2 text-lg font-semibold cursor-pointer" for="formation-4-3-3">
 					4-3-3
 				</label>
@@ -18,7 +21,8 @@
 			<div class="flex flex-col gap-3 w-1/2">
 				<div class="flex justify-between">
 					<h5 class="w-1/2 text-center text-xl font-semibold">Main squad</h5>
-					<div class="flex justify-center items-center bg-blue-500 text-2xl text-white w-10 h-10 cursor-pointer" (click)="setForm('main')">+</div>
+					<div class="flex justify-center items-center bg-blue-500 text-2xl text-white w-10 h-10 cursor-pointer"
+						(click)="setForm('main')">+</div>
 				</div>
 				<div class="flex flex-col gap-1">
 					<ng-template ngFor let-player let-i="index" [ngForOf]="squad.main">
@@ -30,7 +34,8 @@
 								</span>
 								<span class="text-gray-600">{{player.position}}</span>
 							</div>
-							<div class="flex justify-center items-center w-6 h-6 bg-blue-500 text-white cursor-pointer" (click)="this.squad.main.splice(i, 1)">
+							<div class="flex justify-center items-center w-6 h-6 bg-blue-500 text-white cursor-pointer"
+								(click)="this.squad.main.splice(i, 1)">
 								-
 							</div>
 						</div>
@@ -40,7 +45,8 @@
 			<div class="flex flex-col gap-3 w-1/2">
 				<div class="flex justify-between">
 					<h5 class="w-1/2 text-center text-xl font-semibold">Reserve</h5>
-					<div class="flex justify-center items-center bg-blue-500 text-2xl text-white w-10 h-10 cursor-pointer" (click)="setForm('reserve')">+</div>
+					<div class="flex justify-center items-center bg-blue-500 text-2xl text-white w-10 h-10 cursor-pointer"
+						(click)="setForm('reserve')">+</div>
 				</div>
 				<ng-template ngFor let-player let-i="index" [ngForOf]="squad.reserve">
 					<div class="flex items-center gap-5">
@@ -51,7 +57,8 @@
 							</span>
 							<span class="text-gray-600">{{player.position}}</span>
 						</div>
-						<div class="flex justify-center items-center w-6 h-6 bg-blue-500 text-white cursor-pointer" (click)="this.squad.reserve.splice(i, 1)">
+						<div class="flex justify-center items-center w-6 h-6 bg-blue-500 text-white cursor-pointer"
+							(click)="this.squad.reserve.splice(i, 1)">
 							-
 						</div>
 					</div>
@@ -60,7 +67,8 @@
 		</div>
 	</div>
 </form>
-<form class="add-player-to-squad-form fixed flex flex-col gap-1 w-5/12 h-2/5 py-10 px-3 overflow-y-auto bg-slate-400 border-2 border-black text-center transition-all"
+<form
+	class="add-player-to-squad-form fixed flex flex-col gap-1 w-5/12 h-2/5 py-10 px-3 overflow-y-auto bg-slate-400 border-2 border-black text-center transition-all"
 	[class.active]="formMode === 'closed'">
 	<ng-template ngFor let-player let-i="index" [ngForOf]="playersLeft()">
 		<div class="flex justify-between">
