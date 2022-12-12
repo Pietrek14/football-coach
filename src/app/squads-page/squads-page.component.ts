@@ -34,4 +34,13 @@ export class SquadsPageComponent implements OnInit {
         this.router.navigate(['/squad', this.squadList.length]);
       });
   }
+
+  deleteSquad(id: number) {
+    this.squadList.splice(id, 1);
+    this.http.put(this.squadsUrl + '.json', this.squadList).subscribe();
+  }
+
+  squadLink(id: number) {
+    return `/squad/${id}`;
+  }
 }
